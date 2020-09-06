@@ -28,13 +28,13 @@
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>/</url-pattern>
-
 	</servlet-mapping>
-	<!--中文乱码处理-->
+
+	<!--3、中文乱码过滤器配置（POST）-->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-		<!--统一字符编码-->
+		<!--统一字符集 编码-->
 		<init-param>
 			<param-name>encoding</param-name>
 			<param-value>UTF-8</param-value>

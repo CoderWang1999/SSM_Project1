@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--映射配置文件：配置statement对象-->
+<mapper namespace="com.itheima.mapper.UserMapper">
+    <!--根据邮箱和密码查询-->
+    <select id="findByemailAndPwd" resultType="user">
+        SELECT * FROM user WHERE email=#{email} AND password=#{password}
+    </select>
+    <!--查询所有-->
+    <select id="findAll" resultType="user">
+        SELECT * FROM user
+    </select>
+    <!--查询所有城市-->
+    <select id="findAllCity" resultType="city">
+        SELECT * FROM city
+    </select>
+    <!--新增-->
+    <insert id="add" parameterType="user">
+        INSERT INTO user VALUES (#{id}, #{name}, #{age}, #{gender}, #{address}, #{email}, #{password}, #{qq})
+    </insert>
+    <!--根据id删除-->
+    <delete id="deleteById" parameterType="String">
+        delete from user where id=#{id}
+    </delete>
+    <!--根据id查询-->
+    <select id="findById" parameterType="String" resultType="user">
+       SELECT * FROM user where id=#{id}
+    </select>
+    <!--修改-->
+    <update id="update" parameterType="user">
+        update user set name=#{name},age=#{age},gender=#{gender},address=#{address},email=#{email},password=#{password},qq=#{qq} where id=#{id}
+    </update>
+</mapper>

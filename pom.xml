@@ -39,6 +39,12 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
         <!--spring核心做标-->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -51,7 +57,7 @@
             <artifactId>spring-jdbc</artifactId>
             <version>5.1.8.RELEASE</version>
         </dependency>
-        <!--mybatis整合spr-->
+        <!--mybatis整合spring-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
@@ -62,12 +68,6 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.9.4</version>
-        </dependency>
-        <!--slf4j-->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.25</version>
         </dependency>
         <!--web启动Spring-->
         <dependency>
@@ -86,12 +86,14 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
             <version>3.1.0</version>
         </dependency>
         <!--JSP-API-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jsp-api</artifactId>
+            <scope>provided</scope>
             <version>2.0</version>
         </dependency>
         <!--jstl-->
@@ -105,6 +107,12 @@
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
             <version>5.1.8</version>
+        </dependency>
+        <!--jackson-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.8</version>
         </dependency>
     </dependencies>
     <!--tomcat7插件-->
@@ -130,7 +138,7 @@
                 <version>2.2</version>
                 <configuration>
                     <!-- 通过maven tomcat7:run运行项目时，访问项目的端口号 -->
-                    <port>82</port>
+                    <port>8080</port>
                     <!-- 项目访问路径  本例：localhost:9090,  如果配置的aa， 则访问路径为localhost:9090/aa-->
                     <path>/</path>
                 </configuration>
